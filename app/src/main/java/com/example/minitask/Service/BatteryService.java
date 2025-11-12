@@ -4,10 +4,14 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.BatteryManager;
 import android.os.Build;
+import android.os.Handler;
 import android.os.IBinder;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -18,6 +22,8 @@ public class BatteryService extends Service {
     private static final String CHANNEL_ID = "battery_tracking_channel";
     private PowerReceiver powerReceiver;
     private ScreenReceiver screenReceiver;
+    Handler handler = new Handler();
+    Runnable runnable;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -38,6 +44,21 @@ public class BatteryService extends Service {
         registerReceiver(powerReceiver, new IntentFilter(Intent.ACTION_POWER_DISCONNECTED));
         registerReceiver(screenReceiver, new IntentFilter(Intent.ACTION_SCREEN_ON));
         registerReceiver(screenReceiver, new IntentFilter(Intent.ACTION_SCREEN_OFF));
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                BatteryManager bm = (BatteryManager) getSystemService(Context.BATTERY_SERVICE);
+                int currentNow = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CURRENT_NOW);
+
+                handler.postDelayed(this, 1000); // đọc lại sau 1 giây
+            }
+        };
+        handler.post(runnable);
+        return super.onStartCommand(intent, flags, startId);
     }
 
     @Nullable

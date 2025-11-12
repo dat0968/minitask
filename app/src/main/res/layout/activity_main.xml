@@ -2,89 +2,129 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#121212"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#121212">
+    android:padding="16dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <!-- Nút phải (nằm dưới) -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tvRight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/button_left_bg"
+            android:backgroundTint="#8E1818"
+            android:gravity="center_vertical|end"
+            android:minHeight="36dp"
+            android:paddingEnd="16dp"
+            android:text="Right Button"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+        <!-- Nút trái (nằm trên, đè lên nút phải) -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tvLeft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="110dp"
+            android:background="@drawable/button_left_bg"
+            android:backgroundTint="@color/white"
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:drawablePadding="8dp"
+            android:drawableTint="#FF0000"
+            android:gravity="center_vertical|start"
+            android:minHeight="36dp"
+            android:paddingStart="16dp"
+            android:text="Left Button"
+            android:textAllCaps="false"
+            android:textColor="@color/black" />
+    </FrameLayout>
+
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kết quả phiên sạc gần nhất"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
         android:gravity="center"
-        android:paddingBottom="12dp" />
+        android:paddingBottom="12dp"
+        android:text="Kết quả phiên sạc gần nhất"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvTotalTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="8dp"
         android:text="Tổng thời gian sạc: --"
         android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:paddingTop="8dp"/>
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/tvTotalPercent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="8dp"
         android:text="Tổng % sạc được: --"
         android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:paddingTop="8dp"/>
+        android:textSize="16sp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#444"
-        android:layout_marginVertical="12dp"/>
+        android:layout_marginVertical="12dp"
+        android:background="#444" />
 
     <TextView
         android:id="@+id/tvScreenOnTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="8dp"
         android:text="Thời gian Screen ON: --"
         android:textColor="#FFD700"
-        android:textSize="16sp"
-        android:paddingTop="8dp"/>
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/tvScreenOnPercent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="4dp"
         android:text="% sạc khi Screen ON: --"
         android:textColor="#FFD700"
-        android:textSize="16sp"
-        android:paddingTop="4dp"/>
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/tvScreenOffTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="12dp"
         android:text="Thời gian Screen OFF: --"
         android:textColor="#00FFFF"
-        android:textSize="16sp"
-        android:paddingTop="12dp"/>
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/tvScreenOffPercent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="4dp"
         android:text="% sạc khi Screen OFF: --"
         android:textColor="#00FFFF"
-        android:textSize="16sp"
-        android:paddingTop="4dp"/>
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/btnViewDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Xem chi tiết"
         android:layout_marginTop="20dp"
         android:backgroundTint="#03DAC5"
+        android:text="Xem chi tiết"
         android:textColor="#000"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
 </LinearLayout>

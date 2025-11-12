@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@color/cardview_dark_background"
+    android:gravity="center_vertical">
+
+    <!-- Tiêu đề + % + GHz -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <!-- Tiêu đề: CPU -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="CPU"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-medium" />
+
+        <!-- % sử dụng -->
+        <TextView
+            android:id="@+id/tvPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0%"
+            android:textColor="#4CAF50"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Tần số hiện tại -->
+        <TextView
+            android:id="@+id/tvValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00 GHz"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif" />
+    </LinearLayout>
+
+    <!-- Thanh tiến trình: 2 ImageView ghép lại -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:orientation="horizontal"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <!-- Phần đã dùng (xanh) -->
+<!--        <ImageView-->
+<!--            android:id="@+id/imageViewProgress"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:scaleType="fitXY"-->
+<!--            android:src="@android:color/transparent" />-->
+
+<!--        &lt;!&ndash; Đường phân cách (trắng, 1dp) &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="3dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="#7F82458C"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:layout_marginEnd="5dp" />-->
+
+<!--        &lt;!&ndash; Phần trống (xám) &ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:id="@+id/imageViewProgress2"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:scaleType="fitXY"-->
+<!--            android:src="@android:color/transparent" />-->
+        <ImageView
+            android:id="@+id/imageViewProgress"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@android:color/transparent" />
+    </LinearLayout>
+
+</LinearLayout>
