@@ -28,6 +28,7 @@ import com.example.minitask.Service.BatteryService;
 public class MainActivity extends AppCompatActivity {
 
     private TextView tvTotalTime, tvTotalPercent, tvScreenOnTime, tvScreenOnPercent, tvScreenOffTime, tvScreenOffPercent;
+    private Button btnQuickSettings;
     private void addCpuWidgetToHomeScreen() {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
         ComponentName widgetComponent = new ComponentName(this, CpuWidgetProvider.class);
@@ -111,6 +112,11 @@ public class MainActivity extends AppCompatActivity {
         tvScreenOffPercent = findViewById(R.id.tvScreenOffPercent);
         Button btnViewDetail = findViewById(R.id.btnViewDetail);
         btnViewDetail.setOnClickListener(v -> addCpuWidgetToHomeScreen());
+        btnQuickSettings = findViewById(R.id.btnQuickSettings);
+        btnQuickSettings.setOnClickListener(v ->{
+            Intent intent = new Intent(this, QuickSettingsActivity.class);
+            startActivity(intent);
+        });
         // Giả lập dữ liệu demo (sau này sẽ lấy từ SessionManager)
         int totalPercent = 10;
         int onPercent = 3;

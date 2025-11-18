@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="100dp"
+    android:layout_columnWeight="1"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <FrameLayout
+        android:id="@+id/iconContainer"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/circle_bg"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/txtLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Label"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"/>
+</LinearLayout>
